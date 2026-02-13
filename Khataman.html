@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إهداء ثواب الختمة - السيد جدهم</title>
+
+    <meta property="og:title" content=" إهداء ثواب ختمة القرآن الكريم - للسيد جدهم">
+    <meta property="og:description" content="والد أخينا إدريس من دولة نيجيريا - تصدفوا بثواب ختمة القرآن الكريم">
+    <meta property="og:image" content="https://arifabdrohim52-sys.github.io/Khataman/1.webp">
+    <meta property="og:url" content="https://arifabdrohim52-sys.github.io/Khataman/">
+    <meta property="og:type" content="website">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        body { font-family: 'Almarai', sans-serif; background-color: #f8fafc; color: #1e293b; scroll-behavior: smooth; overflow-x: hidden; }
+        .emerald-gradient { background: linear-gradient(180deg, #064e3b 0%, #065f46 100%); }
+        .pulse-yellow { animation: pulse 2s infinite; }
+        @keyframes pulse { 
+            0% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0.7); }
+            70% { box-shadow: 0 0 0 10px rgba(250, 204, 21, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(250, 204, 21, 0); }
+        }
+        .tab-content { display: none; animation: fadeIn 0.4s ease-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        .nav-btn.active { background-color: #fbbf24; color: #064e3b; transform: scale(1.05); }
+    </style>
+</head>
+<body onload="startApp()">
+
+    <header class="emerald-gradient text-white py-10 px-4 text-center shadow-xl relative">
+        <h2 class="text-yellow-400 text-sm md:text-lg font-black mb-6 tracking-[0.2em] uppercase">إهداء ثواب الختمة</h2>
+        
+        <nav class="flex justify-center gap-2 max-w-md mx-auto">
+            <button onclick="showTab('tab1')" id="btn-tab1" class="nav-btn active flex-1 py-3 px-2 rounded-xl text-[11px] font-black border border-white/20 transition-all shadow-lg">الرئيسية</button>
+            <button onclick="showTab('tab2')" id="btn-tab2" class="nav-btn flex-1 py-3 px-2 rounded-xl text-[11px] font-black border border-white/20 transition-all shadow-lg">حجز الأجزاء</button>
+            <button onclick="showTab('tab3')" id="btn-tab3" class="nav-btn flex-1 py-3 px-2 rounded-xl text-[11px] font-black border border-white/20 transition-all shadow-lg">قائمة القراء</button>
+        </nav>
+    </header>
+
+    <main class="max-w-5xl mx-auto p-4 md:p-6 -mt-6 relative z-20">
+        
+        <div id="tab1" class="tab-content active">
+            <div class="bg-white rounded-3xl shadow-2xl p-6 mb-8 text-center border-b-8 border-emerald-700">
+                <div class="mb-6 relative inline-block">
+                    <div class="w-32 h-32 md:w-44 md:h-44 rounded-full border-4 border-yellow-400 overflow-hidden mx-auto shadow-2xl bg-white">
+                        <img src="1.webp" alt="السيد جدهم" class="w-full h-full object-cover">
+                    </div>
+                    <div class="absolute -bottom-2 left-1/2 -translate-x-1/2 bg-yellow-400 text-emerald-900 px-6 py-1 rounded-full text-xs font-black shadow-lg">رحمه الله</div>
+                </div>
+                <h1 class="text-3xl md:text-5xl font-extrabold mb-2 text-emerald-900">السيد جدهم</h1>
+                <p class="text-gray-600 text-lg font-bold">والد أخينا إدريس من دولة نيجيريا</p>
+                <p class="text-gray-400 text-sm mt-2 font-medium">الذي وافته المنية عصر 10/2/2026 في عمر ناهز السبعين</p>
+            </div>
+            <div class="grid grid-cols-3 gap-3 mb-12">
+                <img src="1.webp" class="rounded-xl shadow-lg border-2 border-white aspect-square object-cover cursor-pointer">
+                <img src="2.webp" class="rounded-xl shadow-lg border-2 border-white aspect-square object-cover cursor-pointer">
+                <img src="3.webp" class="rounded-xl shadow-lg border-2 border-white aspect-square object-cover cursor-pointer">
+            </div>
+        </div>
+
+<div id="tab2" class="tab-content">
+    <div class="bg-emerald-900 rounded-3xl shadow-xl p-6 mb-6 text-white border-b-4 border-yellow-500">
+        <div class="flex justify-between items-end mb-4">
+            <div>
+                <h3 class="text-yellow-400 font-black text-lg">إحصائيات الختمة</h3>
+                <p class="text-[10px] text-emerald-100 opacity-80 uppercase">نفع بها الفقيد</p>
+            </div>
+            <span id="percent-text" class="text-3xl font-black text-yellow-400">0%</span>
+        </div>
+
+        <div id="progress-segments" class="grid grid-cols-10 gap-1.5 p-2 bg-black/20 rounded-xl mb-6 border border-white/10">
+            </div>
+
+        <div class="grid grid-cols-3 gap-2 text-center bg-white/10 p-4 rounded-2xl">
+            <div>
+                <span id="juz-count-done" class="block text-xl font-black text-yellow-400">0</span>
+                <span class="text-[9px] font-bold text-emerald-100 uppercase">تم</span>
+            </div>
+            <div class="border-x border-white/10">
+                <span id="juz-count-booked" class="block text-xl font-black text-orange-400">0</span>
+                <span class="text-[9px] font-bold text-emerald-100 uppercase">جاري</span>
+            </div>
+            <div>
+                <span id="juz-count-remaining" class="block text-xl font-black text-white">30</span>
+                <span class="text-[9px] font-bold text-emerald-100 uppercase">باقي</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-white rounded-2xl p-4 mb-6 border-r-4 border-yellow-500 shadow-sm flex flex-col gap-2">
+        <div class="flex items-center gap-3">
+            <span class="w-6 h-6 bg-yellow-400 text-emerald-900 rounded-full flex items-center justify-center font-black text-xs">١</span>
+            <p class="text-emerald-900 font-extrabold text-sm">اختر جزء تريد قراءته بضغط "احجز الآن"</p>
+        </div>
+        <div class="flex items-center gap-3">
+            <span class="w-6 h-6 bg-yellow-400 text-emerald-900 rounded-full flex items-center justify-center font-black text-xs">٢</span>
+            <p class="text-emerald-900 font-extrabold text-sm">بعد إتمام القراءة اضغط "تم الإنجاز"</p>
+        </div>
+    </div>
+    
+    <div id="juz-container" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-4 text-center mb-16">
+        </div>
+</div>
+
+        <div id="tab3" class="tab-content">
+            <section class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden mb-16">
+                <div class="bg-emerald-900 text-white px-6 py-5 flex justify-between items-center">
+                    <h3 class="font-extrabold text-lg">سجل إهداء الثواب</h3>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-right">
+                        <thead class="bg-gray-50 text-gray-500 text-[10px] font-black uppercase">
+                            <tr>
+                                <th class="p-5 border-b">الجزء</th>
+                                <th class="p-5 border-b">القارئ</th>
+                                <th class="p-5 border-b text-center">الحالة</th>
+                            </tr>
+                        </thead>
+                        <tbody id="pembaca-list" class="divide-y divide-gray-50 font-bold text-sm text-gray-700"></tbody>
+                    </table>
+                    <div id="empty-state" class="p-16 text-center text-gray-400 font-bold italic">جاري تحميل البيانات...</div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <div id="modal-ambil" class="fixed inset-0 bg-black/80 backdrop-blur-md hidden flex items-center justify-center p-4 z-[100]">
+        <div class="bg-white rounded-3xl p-8 w-full max-w-sm shadow-2xl">
+            <h3 class="text-3xl font-extrabold mb-4 text-emerald-900">حجز الجزء <span id="selected-juz"></span></h3>
+            <input type="text" id="input-nama" dir="rtl" placeholder="اسمك الكريم.." class="w-full border-2 border-gray-100 rounded-2xl p-5 mb-6 outline-none font-bold text-lg focus:border-emerald-500">
+            <button onclick="prosesAmbil()" class="w-full py-4 bg-emerald-700 text-white rounded-2xl font-black text-xl hover:bg-emerald-800">تأكيد الحجز</button>
+            <button onclick="tutupModal()" class="w-full mt-4 py-2 text-gray-400 font-bold">إلغاء</button>
+        </div>
+    </div>
+
+    <script>
+        const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3QEWqCSUgTxFfFnlilzQJMEyOmKlKSLoRpJgzjIYQjpA6ZsoWSxWNX6cxCjz38p-A/exec"; 
+        let dataJuz = []; 
+        let currentSelected = 0;
+
+        function startApp() {
+            initJuzGrid();
+            fetchData();
+        }
+
+        function showTab(tabId) {
+            document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+            document.querySelectorAll('.nav-btn').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(tabId).classList.add('active');
+            document.getElementById('btn-' + tabId).classList.add('active');
+        }
+
+        function initJuzGrid() {
+            const container = document.getElementById('juz-container');
+            container.innerHTML = '';
+            for (let i = 1; i <= 30; i++) {
+                const div = document.createElement('div');
+                div.id = `juz-box-${i}`;
+                div.className = "p-5 rounded-2xl border-2 bg-white border-gray-100 flex flex-col items-center justify-center shadow-sm h-40";
+                div.innerHTML = `
+                    <div class="text-[9px] font-black text-emerald-700 mb-1">الجزء</div>
+                    <div class="text-3xl font-black text-gray-900">${i}</div>
+                    <button onclick="bukaModal(${i})" class="mt-4 w-full py-2 text-[10px] font-black bg-emerald-700 text-white rounded-xl shadow-md">احجز الآن</button>
+                `;
+                container.appendChild(div);
+            }
+            renderSegments();
+        }
+
+        async function fetchData() {
+            try {
+                const response = await fetch(SCRIPT_URL);
+                dataJuz = await response.json();
+                updateJuzDisplay();
+                updateProgress();
+                renderList();
+            } catch (e) { console.error("Update data gagal"); }
+        }
+
+        function updateJuzDisplay() {
+            dataJuz.forEach(d => {
+                const box = document.getElementById(`juz-box-${d.juz}`);
+                if (!box) return;
+                
+                if (d.status === 'proses') {
+                    // Tampilan saat sedang dibaca
+                    box.className = "p-5 rounded-2xl border-2 bg-yellow-50 border-yellow-400 pulse-yellow flex flex-col items-center justify-center h-40 shadow-sm transition-all";
+                    box.innerHTML = `
+                        <div class="text-3xl font-black text-yellow-800">${d.juz}</div>
+                        <p class="text-[9px] text-yellow-900 font-black truncate w-full mt-1 mb-2 italic">${d.nama}</p>
+                        <button onclick="laporSelesai(${d.juz})" class="w-full py-2 text-[9px] bg-yellow-400 text-yellow-950 rounded-lg font-black border border-yellow-500">تم الإنجاز</button>
+                    `;
+                } else if (d.status === 'selesai') {
+                    // Tampilan saat sudah selesai (Nama di atas keterangan Maktumal)
+                    box.className = "p-5 rounded-2xl border-2 bg-emerald-800 border-emerald-900 flex flex-col items-center justify-center h-40 shadow-inner transition-all";
+                    box.innerHTML = `
+                        <div class="text-3xl font-black text-white">${d.juz}</div>
+                        <p class="text-[10px] text-emerald-100 font-bold truncate w-full mt-2 px-1">${d.nama}</p>
+                        <div class="text-[9px] text-yellow-300 font-black mt-2 border border-yellow-400/30 px-3 py-1 rounded-full uppercase">مكتمل</div>
+                    `;
+                }
+            });
+        }
+
+        function renderSegments() {
+            const seg = document.getElementById('progress-segments');
+            seg.innerHTML = '';
+            for (let i = 1; i <= 30; i++) {
+                const d = dataJuz.find(x => x.juz == i);
+                let color = "bg-white/10";
+                if(d?.status === 'selesai') color = "bg-yellow-400";
+                else if(d?.status === 'proses') color = "bg-orange-400 animate-pulse";
+                seg.innerHTML += `<div class="h-2 rounded-sm ${color} transition-all duration-700"></div>`;
+            }
+        }
+
+        function updateProgress() {
+            const countDone = dataJuz.filter(d => d.status === 'selesai').length;
+            const countBooked = dataJuz.filter(d => d.status === 'proses').length;
+            const remaining = 30 - (countDone + countBooked);
+
+            document.getElementById('percent-text').innerText = Math.round((countDone / 30) * 100) + '%';
+            document.getElementById('juz-count-done').innerText = countDone;
+            document.getElementById('juz-count-booked').innerText = countBooked;
+            document.getElementById('juz-count-remaining').innerText = remaining;
+            renderSegments();
+        }
+
+async function prosesAmbil() {
+    const nama = document.getElementById('input-nama').value;
+    const modalBtn = event.target;
+    
+    if(!nama) return alert("الرجاء إدخال الاسم");
+    
+    // 1. Ubah tombol di Modal (Ganti ke Biru/Abu)
+    modalBtn.innerText = "جاري...";
+    modalBtn.disabled = true;
+    modalBtn.classList.replace('bg-emerald-700', 'bg-blue-600');
+
+    // 2. Ubah juga tombol di Grid background
+    const gridBox = document.getElementById(`juz-box-${currentSelected}`);
+    const gridBtn = gridBox.querySelector('button');
+    if(gridBtn) {
+        gridBtn.innerText = "جاري...";
+        gridBtn.disabled = true;
+        gridBtn.classList.replace('bg-emerald-700', 'bg-blue-600');
+    }
+
+    try {
+        await fetch(SCRIPT_URL, { 
+            method: "POST", 
+            body: JSON.stringify({ juz: currentSelected, nama: nama, action: 'ambil' }) 
+        });
+        tutupModal();
+        await fetchData();
+        
+        // Reset tombol modal
+        modalBtn.innerText = "تأكيد الحجز";
+        modalBtn.disabled = false;
+        modalBtn.classList.replace('bg-blue-600', 'bg-emerald-700');
+    } catch (e) {
+        alert("Terjadi kesalahan");
+        modalBtn.innerText = "تأكيد الحجز";
+        modalBtn.disabled = false;
+        modalBtn.classList.replace('bg-blue-600', 'bg-emerald-700');
+        if(gridBtn) {
+            gridBtn.innerText = "احجز الآن";
+            gridBtn.classList.replace('bg-blue-600', 'bg-emerald-700');
+        }
+    }
+}
+
+async function laporSelesai(n) {
+    const box = document.getElementById(`juz-box-${n}`);
+    const btn = box.querySelector('button');
+    const originalText = btn.innerText;
+    
+    // Perubahan Warna & Teks
+    btn.innerText = "جاري...";
+    btn.disabled = true;
+    btn.classList.remove('bg-yellow-400', 'text-yellow-950'); // hapus warna kuning
+    btn.classList.add('bg-gray-500', 'text-white', 'opacity-70'); // ganti ke abu-abu
+
+    try {
+        await fetch(SCRIPT_URL, { 
+            method: "POST", 
+            body: JSON.stringify({ juz: n, action: 'selesai' }) 
+        });
+        await fetchData();
+    } catch (e) {
+        alert("Gagal memperbarui status");
+        btn.innerText = originalText;
+        btn.disabled = false;
+        btn.classList.add('bg-yellow-400', 'text-yellow-950');
+        btn.classList.remove('bg-gray-500', 'text-white', 'opacity-70');
+    }
+}
+
+        function renderList() {
+            const listContainer = document.getElementById('pembaca-list');
+            const items = dataJuz.filter(d => d.nama).reverse();
+            if(items.length === 0) return;
+            document.getElementById('empty-state').style.display = 'none';
+            listContainer.innerHTML = items.map(d => `
+                <tr class="hover:bg-gray-50">
+                    <td class="p-5 font-black text-emerald-900">الجزء ${d.juz}</td>
+                    <td class="p-5 font-bold">${d.nama}</td>
+                    <td class="p-5 text-center">
+                        <span class="px-3 py-1 rounded-full text-[9px] font-black ${d.status === 'selesai' ? 'bg-emerald-100 text-emerald-800' : 'bg-yellow-100 text-yellow-800'}">
+                            ${d.status === 'selesai' ? 'مكتمل' : 'قيد القراءة'}
+                        </span>
+                    </td>
+                </tr>
+            `).join('');
+        }
+
+        function bukaModal(n) { currentSelected = n; document.getElementById('selected-juz').innerText = n; document.getElementById('modal-ambil').classList.remove('hidden'); }
+        function tutupModal() { document.getElementById('modal-ambil').classList.add('hidden'); }
+
+        setInterval(fetchData, 60000);
+    </script>
+</body>
+</html>
